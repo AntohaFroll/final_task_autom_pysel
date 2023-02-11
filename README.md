@@ -1,0 +1,1 @@
+Final task tests for Test Automation with Selenium and Python course
