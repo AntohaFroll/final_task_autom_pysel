@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from .locators import ProductPageLocators
+from .locators import ProductPageLocators, BasketPageLocators
 
 
 class ProductPage(BasePage):
@@ -8,13 +8,13 @@ class ProductPage(BasePage):
         button_add_to_basket.click()
 
     def should_be_product_in_basket(self):
-        assert self.is_element_present(*ProductPageLocators.ADDED_FORM_IN_BASKET), \
+        assert self.is_element_present(*BasketPageLocators.ADDED_FORM_IN_BASKET), \
             "Product not added to basket"
-        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        product_name_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_BASKET).text
-        assert product_name.find(product_name_in_basket), \
-            "Wrong product added to basket"
-        product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
-        product_price_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_IN_BASKET).text
-        assert product_price.find(product_price_in_basket), \
-            "Wrong product price"
+
+    def find_product_name(self):
+        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
+        return product_name
+
+    def find_product_price(self):
+        product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE)
+        return product_price

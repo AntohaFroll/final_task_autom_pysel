@@ -12,8 +12,11 @@ class LoginPageLocators:
 
 class ProductPageLocators:
     BUTTON_ADD_TO_BASKET = (By.XPATH, '//button[contains(@class, "btn-add-to-basket")]')
-    ADDED_FORM_IN_BASKET = (By.XPATH, '//div[@id="messages"]')
     PRODUCT_NAME = (By.XPATH, '//div[@class="col-sm-6 product_main"]/h1')
     PRODUCT_PRICE = (By.XPATH, '//div[@class="col-sm-6 product_main"]/p[@class="price_color"]')
-    PRODUCT_NAME_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]')
-    PRODUCT_PRICE_IN_BASKET = (By.XPATH, '//div[@class="basket-mini pull-right hidden-xs"]/strong')
+
+
+class BasketPageLocators:
+    ADDED_FORM_IN_BASKET = (By.XPATH, '//div[@id="messages"]')
+    PRODUCT_NAME_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]/strong')
+    PRODUCT_PRICE_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]/p/strong')
