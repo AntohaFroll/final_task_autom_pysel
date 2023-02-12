@@ -1,4 +1,5 @@
 from .base_page import BasePage
+from .basket_page import BasketPage
 from .locators import ProductPageLocators, BasketPageLocators
 
 
@@ -25,4 +26,14 @@ class ProductPage(BasePage):
 
     def should_be_disappeared_success_message(self):
         assert self.is_disappeared(*BasketPageLocators.SUCCESS_MESSAGE), \
-            "Success message is not ddisappeared, but should be"
+            "Success message is not disappeared, but should be"
+
+    def should_match_names(self):
+        basket_page = BasketPage(self.browser, url=self.browser.current_url)
+        assert self.find_product_name().text == basket_page.find_product_name_in_basket().text, \
+            "Wrong product added to basket"
+
+    def should_match_prices(self):
+        basket_page = BasketPage(self.browser, url=self.browser.current_url)
+        assert self.find_product_price().text == basket_page.find_product_price_in_basket().text, \
+            "Wrong product price"
