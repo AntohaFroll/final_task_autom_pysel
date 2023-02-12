@@ -17,6 +17,6 @@ class ProductPageLocators:
 
 
 class BasketPageLocators:
-    ADDED_FORM_IN_BASKET = (By.XPATH, '//div[@id="messages"]')
+    SUCCESS_MESSAGE = (By.XPATH, '//div[@class="alert alert-safe alert-noicon alert-success  fade in"]')
     PRODUCT_NAME_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]/strong')
     PRODUCT_PRICE_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]/p/strong')
