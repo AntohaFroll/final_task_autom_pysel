@@ -8,8 +8,11 @@ class BasePageLocators:
     USER_ICON = (By.XPATH, '//i[@class="icon-user"]')
 
 
-class MainPageLocators:
-    LOGIN_LINK = (By.XPATH, '//a[@id="login_link"]')
+class BasketPageLocators:
+    SUCCESS_MESSAGE = (By.XPATH, '//div[@class="alert alert-safe alert-noicon alert-success  fade in"]')
+    PRODUCT_NAME_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]/strong')
+    PRODUCT_PRICE_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]/p/strong')
+    BASKET_IS_EMPTY = (By.XPATH, '//div[@id="content_inner"]/p')
 
 
 class LoginPageLocators:
@@ -21,14 +24,14 @@ class LoginPageLocators:
     BUTTON_REGISTER = (By.XPATH, '//button[@name="registration_submit"]')
 
 
+class MainPageLocators:
+    LOGIN_LINK = (By.XPATH, '//a[@id="login_link"]')
+
+
 class ProductPageLocators:
     BUTTON_ADD_TO_BASKET = (By.XPATH, '//button[contains(@class, "btn-add-to-basket")]')
     PRODUCT_NAME = (By.XPATH, '//div[@class="col-sm-6 product_main"]/h1')
     PRODUCT_PRICE = (By.XPATH, '//div[@class="col-sm-6 product_main"]/p[@class="price_color"]')
 
 
-class BasketPageLocators:
-    SUCCESS_MESSAGE = (By.XPATH, '//div[@class="alert alert-safe alert-noicon alert-success  fade in"]')
-    PRODUCT_NAME_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]/strong')
-    PRODUCT_PRICE_IN_BASKET = (By.XPATH, '//div[@class="alertinner "]/p/strong')
-    BASKET_IS_EMPTY = (By.XPATH, '//div[@id="content_inner"]/p')
+
